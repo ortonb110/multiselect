@@ -19,6 +19,14 @@ function App() {
     })
   }
 
+  const selectIceCream = () => {
+    if(checkButtonIce === true) {
+      setCheckButtonIce(false);
+    } else {
+      setCheckButtonIce(true)
+    }
+    console.log(checkButtonIce)
+  }
 
 
 
@@ -29,7 +37,7 @@ function App() {
        "Please select food"}</p>
       <div className="flex flex-col items-baseline gap-3 text-[1rem] font-semibold">
         <button className={`font-bold btn ${checkAll? "bg-gray-200" : ""}`} onClick={checkAllHandler}>Check all</button>
-        <button className={`food btn ${checkAll? "bg-gray-200 " : ""}`}>Ice-Cream</button>
+        <button className={`food btn ${checkAll? "bg-gray-200 " : ""} ${checkButtonIce? "bg-gray-200": ""}`} onClick={selectIceCream}>Ice-Cream</button>
         <button className={`food btn ${checkAll? "bg-gray-200 " : ""}`}>Hot-Dog</button>
         <button className={`food btn ${checkAll? "bg-gray-200 " : ""}`}>Popcorn</button>
         <button className={`food btn ${checkAll? "bg-gray-200 " : ""}`}>Cookie</button>
